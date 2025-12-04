@@ -6,69 +6,53 @@ import { Footer } from "@/components/Footer";
 import { FeatureCard } from "@/components/FeatureCard";
 import { StatCard } from "@/components/StatCard";
 import heroBg from "@/assets/hero-bg.jpg";
-
 const Index = () => {
-  const features = [
-    {
-      icon: BookOpen,
-      title: "Complete Setup Guides",
-      description: "Step-by-step instructions for organizing science fairs at any school, from planning to execution."
-    },
-    {
-      icon: Map,
-      title: "State-by-State Resources",
-      description: "Comprehensive database of science fair opportunities, requirements, and contacts for all 50 states."
-    },
-    {
-      icon: FlaskConical,
-      title: "Research Project Help",
-      description: "Learn how to develop winning research projects, from ideation to presentation."
-    },
-    {
-      icon: Users,
-      title: "Mentor Network",
-      description: "Connect with scientists, teachers, and past winners who can guide your journey."
-    },
-    {
-      icon: Target,
-      title: "Competition Pathways",
-      description: "Navigate the path from local fairs to Regeneron ISEF and other prestigious competitions."
-    },
-    {
-      icon: GraduationCap,
-      title: "Teacher Resources",
-      description: "Curriculum materials, judging guides, and training for educators supporting young scientists."
-    }
-  ];
-
-  const steps = [
-    {
-      number: "01",
-      title: "Explore Resources",
-      description: "Browse our comprehensive guides tailored to your needs—whether you're a student, teacher, or administrator."
-    },
-    {
-      number: "02",
-      title: "Connect & Learn",
-      description: "Join our community, find mentors, and access workshops designed to build your research skills."
-    },
-    {
-      number: "03",
-      title: "Launch Your Project",
-      description: "Use our templates, timelines, and expert advice to start your science fair journey with confidence."
-    }
-  ];
-
-  return (
-    <div className="min-h-screen bg-background">
+  const features = [{
+    icon: BookOpen,
+    title: "Complete Setup Guides",
+    description: "Step-by-step instructions for organizing science fairs at any school, from planning to execution."
+  }, {
+    icon: Map,
+    title: "State-by-State Resources",
+    description: "Comprehensive database of science fair opportunities, requirements, and contacts for all 50 states."
+  }, {
+    icon: FlaskConical,
+    title: "Research Project Help",
+    description: "Learn how to develop winning research projects, from ideation to presentation."
+  }, {
+    icon: Users,
+    title: "Mentor Network",
+    description: "Connect with scientists, teachers, and past winners who can guide your journey."
+  }, {
+    icon: Target,
+    title: "Competition Pathways",
+    description: "Navigate the path from local fairs to Regeneron ISEF and other prestigious competitions."
+  }, {
+    icon: GraduationCap,
+    title: "Teacher Resources",
+    description: "Curriculum materials, judging guides, and training for educators supporting young scientists."
+  }];
+  const steps = [{
+    number: "01",
+    title: "Explore Resources",
+    description: "Browse our comprehensive guides tailored to your needs—whether you're a student, teacher, or administrator."
+  }, {
+    number: "02",
+    title: "Connect & Learn",
+    description: "Join our community, find mentors, and access workshops designed to build your research skills."
+  }, {
+    number: "03",
+    title: "Launch Your Project",
+    description: "Use our templates, timelines, and expert advice to start your science fair journey with confidence."
+  }];
+  return <div className="min-h-screen bg-background">
       <Navbar />
       
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center pt-16">
-        <div 
-          className="absolute inset-0 bg-cover bg-center opacity-30"
-          style={{ backgroundImage: `url(${heroBg})` }}
-        />
+        <div className="absolute inset-0 bg-cover bg-center opacity-30" style={{
+        backgroundImage: `url(${heroBg})`
+      }} />
         <div className="absolute inset-0 bg-gradient-to-r from-background via-background/90 to-transparent" />
         
         <div className="container mx-auto px-4 relative z-10">
@@ -85,12 +69,16 @@ const Index = () => {
               <span className="text-primary">Without Barriers</span>
             </h1>
             
-            <p className="text-xl text-muted-foreground mb-8 animate-fade-up max-w-2xl" style={{ animationDelay: "100ms" }}>
+            <p className="text-xl text-muted-foreground mb-8 animate-fade-up max-w-2xl" style={{
+            animationDelay: "100ms"
+          }}>
               Every student deserves the opportunity to explore science. We provide free resources, 
               guidance, and connections to bring world-class science fair experiences to underserved communities.
             </p>
             
-            <div className="flex flex-col sm:flex-row gap-4 animate-fade-up" style={{ animationDelay: "200ms" }}>
+            <div className="flex flex-col sm:flex-row gap-4 animate-fade-up" style={{
+            animationDelay: "200ms"
+          }}>
               <Button size="lg" asChild className="group">
                 <Link to="/setup-guide">
                   Start a Science Fair
@@ -108,8 +96,8 @@ const Index = () => {
         
         {/* Scroll indicator */}
         <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-float">
-          <div className="w-6 h-10 border-2 border-foreground/30 flex items-start justify-center pt-2">
-            <div className="w-1 h-3 bg-foreground/50 animate-bounce" />
+          <div className="w-6 h-10 border-2 flex items-start justify-center pt-2 border-accent">
+            <div className="w-1 h-3 animate-bounce border-accent-foreground bg-accent-foreground" />
           </div>
         </div>
       </section>
@@ -188,15 +176,7 @@ const Index = () => {
           </div>
           
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {features.map((feature, index) => (
-              <FeatureCard
-                key={feature.title}
-                icon={feature.icon}
-                title={feature.title}
-                description={feature.description}
-                delay={index * 100}
-              />
-            ))}
+            {features.map((feature, index) => <FeatureCard key={feature.title} icon={feature.icon} title={feature.title} description={feature.description} delay={index * 100} />)}
           </div>
         </div>
       </section>
@@ -214,16 +194,12 @@ const Index = () => {
           </div>
 
           <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-            {steps.map((step, index) => (
-              <div key={step.number} className="relative">
+            {steps.map((step, index) => <div key={step.number} className="relative">
                 <div className="text-8xl font-bold text-primary/10 mb-4">{step.number}</div>
                 <h3 className="text-2xl font-semibold mb-3 text-foreground -mt-12">{step.title}</h3>
                 <p className="text-muted-foreground">{step.description}</p>
-                {index < steps.length - 1 && (
-                  <div className="hidden md:block absolute top-12 right-0 w-16 border-t-2 border-dashed border-border translate-x-1/2" />
-                )}
-              </div>
-            ))}
+                {index < steps.length - 1 && <div className="hidden md:block absolute top-12 right-0 w-16 border-t-2 border-dashed border-border translate-x-1/2" />}
+              </div>)}
           </div>
         </div>
       </section>
@@ -252,8 +228,6 @@ const Index = () => {
       </section>
 
       <Footer />
-    </div>
-  );
+    </div>;
 };
-
 export default Index;
