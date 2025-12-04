@@ -7,6 +7,8 @@ import Index from "./pages/Index";
 import SetupGuide from "./pages/SetupGuide";
 import StateResources from "./pages/StateResources";
 import ResearchGuide from "./pages/ResearchGuide";
+import VolunteerSignup from "./pages/VolunteerSignup";
+import Donate from "./pages/Donate";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -22,6 +24,8 @@ const App = () => (
           <Route path="/setup-guide" element={<SetupGuide />} />
           <Route path="/state-resources" element={<StateResources />} />
           <Route path="/research-guide" element={<ResearchGuide />} />
+          <Route path="/volunteer" element={<VolunteerSignup />} />
+          <Route path="/donate" element={<Donate />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>

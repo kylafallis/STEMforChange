@@ -8,6 +8,8 @@ const navLinks = [
   { name: "Setup Guide", path: "/setup-guide" },
   { name: "State Resources", path: "/state-resources" },
   { name: "Research Guide", path: "/research-guide" },
+  { name: "Volunteer", path: "/volunteer" },
+  { name: "Donate", path: "/donate" },
 ];
 
 export const Navbar = () => {
